@@ -9,12 +9,12 @@
     --clr-white: 0 0% 100%;
     
     /* font-sizes */
-    --fs-900: 9.375rem;
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
-    --fs-600: 2rem;
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
     --fs-500: 1.75rem;
-    --fs-400: 1.125rem;
+    --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
     
@@ -22,6 +22,25 @@
     --ff-serif: "Bellefair", serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
     --ff-sans-normal: "Barlow", sans-serif;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-400: 1.125rem;
+    }
 }
 
 
@@ -69,6 +88,9 @@ body {
     background-color: hsl( var(--clr-dark) );
     line-height: 1.5;
     min-height: 100vh;
+    
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 /* make images easier to work with */
@@ -115,6 +137,10 @@ select {
     gap: var(--gap, 1rem);
 }
 
+.d-block {
+    display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 }
@@ -123,6 +149,39 @@ select {
     padding-inline: 2em;
     margin-inline: auto;
     max-width: 80rem;
+}
+
+.grid-container {
+    text-align: center;
+    border: 5px solid limegreen;
+    display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+}
+
+.grid-container * {
+    max-width: 50ch;
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        text-align: left;
+        column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+    }
+    
+    .grid-container > *:first-child {
+        grid-column: 2;
+    }
+
+    .grid-container > *:last-child {
+        grid-column: 3;
+    }
+
+    .grid-container--home {
+        padding-bottom: 6rem;
+        align-items: end;
+    }
 }
 
 .sr-only {
@@ -190,13 +249,14 @@ select {
 
 
 /* ------------------- */
-/* Components         */
+/* Compontents         */
 /* ------------------- */
 
 .large-button {
+    font-size: 2rem;
     position: relative;
     z-index: 1;
-    display: grid;
+    display: inline-grid;
     place-items: center;
     padding: 0 2em;
     border-radius: 50%;
@@ -239,10 +299,6 @@ select {
     margin-right: .5em;
 }
 
-.tab-list {
-    --gap: 2rem;
-}
-
 .underline-indicators > * {
     cursor: pointer;
     padding: var(--underline-gap, 1rem) 0;
@@ -250,53 +306,34 @@ select {
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
 }
 
-.underline-indicators > li:hover,
-.underline-indicators > li:focus,
-.underline-indicators > button:hover,
-.underline-indicators > button:focus {
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
     border-color: hsl( var(--clr-white) / .5);
 }
 
 .underline-indicators > .active,
 .underline-indicators > [aria-selected="true"] {
     color: hsl( var(--clr-white) / 1);
-    border-color: hsl( var(--clr-white) / 1) !important;
+    border-color: hsl( var(--clr-white) / 1); 
+}
+
+.tab-list {
+    --gap: 2rem;
 }
 
 .dot-indicators > * {
     cursor: pointer;
     border: 0;
     border-radius: 50%;
-    aspect-ratio: 1;
-    padding: 0.25em;
+    padding: .5em;
     background-color: hsl( var(--clr-white) / .25);
 }
-
-.dot-indicators > button:hover,
-.dot-indicators > button:focus {
+ 
+.dot-indicators > *:hover,
+.dot-indicators > *:focus { 
     background-color: hsl( var(--clr-white) / .5);
 }
 
 .dot-indicators > [aria-selected="true"] {
-    background-color: hsl( var(--clr-white) / 1) !important;
-}
-
-.number-indicators > button {
-    cursor: pointer;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    border: 1px solid hsl( var(--clr-white) / .25 );
-    background-color: hsl( var(--clr-dark) );
-    color: hsl( var(--clr-white) );
-}
-
-.number-indicators > button:hover,
-.number-indicators > button:focus {
-    border-color: hsl( var(--clr-white) );
-}
-
-.number-indicators > [aria-selected="true"] {
-    background-color: hsl( var(--clr-white) / 1) !important;
-    color: hsl( var(--clr-dark) );
+    background-color: hsl( var(--clr-white) / 1); 
 }
