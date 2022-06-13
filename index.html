@@ -21,8 +21,9 @@
         <div>
             <img src="./assets/shared/logo.svg" alt="logo" class="logo">
         </div>
+        <button onclick="displayMenu()" class="mobile-nav-toggle" data-visible="false" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
         <nav>
-            <ul class="primary-navigation underline-indicators flex">
+            <ul id="primary-navigation" class="primary-navigation underline-indicators flex">
                 <li class="active"><a class="fs-300 ff-sans-cond text-white letter-spacing-2 uppercase" href="index.html"><span>00</span>Home</a>
                 <li><a class="fs-300 ff-sans-cond text-white letter-spacing-2 uppercase" href="destination.html"><span>01</span>Destination</a>
                 <li><a class="fs-300 ff-sans-cond text-white letter-spacing-2 uppercase" href="crew.html"><span>02</span> Crew</a>
@@ -52,6 +53,6 @@
 
 
 
+    <script src="index.js"></script>
 </body>
-
 </html>
