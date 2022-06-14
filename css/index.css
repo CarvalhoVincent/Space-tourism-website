@@ -13,7 +13,7 @@
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
-    --fs-500: 1.75rem;
+    --fs-500: 1rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
@@ -29,6 +29,7 @@
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
         --fs-400: 1rem;
     }
 }
@@ -378,7 +379,7 @@ select {
         right: 1rem;
         top: 2rem;
         background: transparent;
-        background-image: url(./assets/shared/icon-hamburger.svg);
+        background-image: url(/assets/shared/icon-hamburger.svg);
         width: 1.5rem;
         aspect-ratio: 1;
         background-repeat: no-repeat;
@@ -468,18 +469,18 @@ body {
 }
 /* home */
 .home {
-    background-image: url(./assets/home/background-home-mobile.jpg);
+    background-image: url(/assets/home/background-home-mobile.jpg);
 }
 
 @media (min-width: 35em) {
     .home {
         background-position: center center;
-        background-image: url(./assets/home/background-home-tablet.jpg);
+        background-image: url(/assets/home/background-home-tablet.jpg);
     }
 }
 
 @media (min-width: 45em) {
     .home {
-        background-image: url(./assets/home/background-home-desktop.jpg);
+        background-image: url(/assets/home/background-home-desktop.jpg);
     }
 }
