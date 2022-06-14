@@ -13,7 +13,7 @@
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
-    --fs-500: 1rem;
+    --fs-500: 1.75rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
@@ -469,18 +469,18 @@ body {
 }
 /* home */
 .home {
-    background-image: url(/assets/home/background-home-mobile.jpg);
+    background-image: url(../assets/home/background-home-mobile.jpg);
 }
 
 @media (min-width: 35em) {
     .home {
         background-position: center center;
-        background-image: url(/assets/home/background-home-tablet.jpg);
+        background-image: url(../assets/home/background-home-tablet.jpg);
     }
 }
 
 @media (min-width: 45em) {
     .home {
-        background-image: url(/assets/home/background-home-desktop.jpg);
+        background-image: url(../assets/home/background-home-desktop.jpg);
     }
 }
