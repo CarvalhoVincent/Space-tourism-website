@@ -379,7 +379,7 @@ select {
         right: 1rem;
         top: 2rem;
         background: transparent;
-        background-image: url(/assets/shared/icon-hamburger.svg);
+        background-image: url(../assets/shared/icon-hamburger.svg);
         width: 1.5rem;
         aspect-ratio: 1;
         background-repeat: no-repeat;
@@ -460,6 +460,27 @@ select {
 .dot-indicators > [aria-selected="true"] {
     background-color: hsl( var(--clr-white) / 1); 
 }
+
+.number-indicators > button {
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px solid hsl( var(--clr-white) / .25 );
+    background-color: hsl( var(--clr-dark) );
+    color: hsl( var(--clr-white) );
+}
+
+.number-indicators > button:hover,
+.number-indicators > button:focus {
+    border-color: hsl( var(--clr-white) );
+}
+
+.number-indicators > [aria-selected="true"] {
+    background-color: hsl( var(--clr-white) / 1) !important;
+    color: hsl( var(--clr-dark) );
+}
+
 /* ----------------------------- */
 /* Page specific babckground     */
 /* ----------------------------- */

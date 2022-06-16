@@ -1,5 +1,15 @@
 "use strict";
 
+const image = document.getElementById("obj-image");
+const named = document.getElementById("obj-name");
+const desc = document.getElementById("obj-description");
+const distance = document.getElementById("obj-distance");
+const travel = document.getElementById("obj-travel");
+const moon = document.getElementById("moon");
+const mars = document.getElementById("mars");
+const europa = document.getElementById("europa");
+const titan = document.getElementById("titan");
+
 function displayMoon() {
 
     fetch("./scripts/data.json")
@@ -8,19 +18,15 @@ function displayMoon() {
     })
     .then(function(data) {
 
-        const image = document.getElementById("obj-image");
+        moon.setAttribute("aria-selected", true);
+        mars.setAttribute("aria-selected", false);
+        europa.setAttribute("aria-selected", false);
+        titan.setAttribute("aria-selected", false);
+        
         image.src = data.destinations[0].images.png;
-
-        const named = document.getElementById("obj-name");
         named.innerHTML = data.destinations[0].name;
-
-        const desc = document.getElementById("obj-description");
         desc.innerHTML = data.destinations[0].description;
-
-        const distance = document.getElementById("obj-distance");
         distance.innerHTML = data.destinations[0].distance;
-
-        const travel = document.getElementById("obj-travel");
         travel.innerHTML = data.destinations[0].travel;
     });
     }
@@ -33,19 +39,15 @@ function displayMars() {
     })
     .then(function(data) {
 
-        const image = document.getElementById("obj-image");
+        moon.setAttribute("aria-selected", false);
+        mars.setAttribute("aria-selected", true);
+        europa.setAttribute("aria-selected", false);
+        titan.setAttribute("aria-selected", false);
+
         image.src = data.destinations[1].images.png;
-
-        const named = document.getElementById("obj-name");
         named.innerHTML = data.destinations[1].name;
-
-        const desc = document.getElementById("obj-description");
         desc.innerHTML = data.destinations[1].description;
-
-        const distance = document.getElementById("obj-distance");
         distance.innerHTML = data.destinations[1].distance;
-
-        const travel = document.getElementById("obj-travel");
         travel.innerHTML = data.destinations[1].travel;
     });
     }
@@ -58,19 +60,15 @@ function displayEuropa() {
     })
     .then(function(data) {
 
-        const image = document.getElementById("obj-image");
+        moon.setAttribute("aria-selected", false);
+        mars.setAttribute("aria-selected", false);
+        europa.setAttribute("aria-selected", true);
+        titan.setAttribute("aria-selected", false);
+
         image.src = data.destinations[2].images.png;
-
-        const named = document.getElementById("obj-name");
         named.innerHTML = data.destinations[2].name;
-
-        const desc = document.getElementById("obj-description");
         desc.innerHTML = data.destinations[2].description;
-
-        const distance = document.getElementById("obj-distance");
         distance.innerHTML = data.destinations[2].distance;
-
-        const travel = document.getElementById("obj-travel");
         travel.innerHTML = data.destinations[2].travel;
     });
     }
@@ -83,19 +81,15 @@ function displayTitan() {
     })
     .then(function(data) {
     
-        const image = document.getElementById("obj-image");
+        moon.setAttribute("aria-selected", false);
+        mars.setAttribute("aria-selected", false);
+        europa.setAttribute("aria-selected", false);
+        titan.setAttribute("aria-selected", true);
+
         image.src = data.destinations[3].images.png;
-
-        const named = document.getElementById("obj-name");
         named.innerHTML = data.destinations[3].name;
-
-        const desc = document.getElementById("obj-description");
         desc.innerHTML = data.destinations[3].description;
-
-        const distance = document.getElementById("obj-distance");
         distance.innerHTML = data.destinations[3].distance;
-
-        const travel = document.getElementById("obj-travel");
         travel.innerHTML = data.destinations[3].travel;
     });
     }
