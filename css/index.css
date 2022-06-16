@@ -375,7 +375,7 @@ select {
     .mobile-nav-toggle {
         display: block;
         position: absolute;
-        z-index: 2000;
+        z-index: 20000;
         right: 1rem;
         top: 2rem;
         background: transparent;
