@@ -6,12 +6,12 @@ function displayMenu() {
 
     if(state.getAttribute("data-visible") === "false") {
 
-        state.style = "background-image: url(./../assets/icon-close.svg);";
+        state.style = "background-image: url(./assets/icon-close.svg);";
         state.setAttribute("data-visible", true);
         state.setAttribute("aria-expanded", true);
     } else {
 
-        state.style = "background-image: url(./../assets/icon-hamburger.svg);";
+        state.style = "background-image: url(./assets/icon-hamburger.svg);";
         state.setAttribute("data-visible", false);
         state.setAttribute("aria-expanded", false);
     }
