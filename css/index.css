@@ -99,7 +99,7 @@ body {
 
 /* make images easier to work with */
 img,
-picutre {
+picture {
     max-width: 100%;
     display: block;
 }
@@ -433,8 +433,8 @@ select {
 
 .number-indicators > button {
     cursor: pointer;
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     border: 1px solid hsl( var(--clr-white) / .25 );
     background-color: hsl( var(--clr-dark) );
@@ -635,8 +635,8 @@ body {
     grid-template-areas: 
     'title'
     'image'
-    'number'
-    'details';
+    'number-ind'
+    'info';
 }
 
 .grid-container--technology img {
@@ -644,15 +644,28 @@ body {
 }
 
 .grid-container--technology > .number-indicators {
-    grid-area: number;
+    grid-area: number-ind;
 }
 
-.grid-container--technology > .technology-details {
-    grid-area: details;
+.grid-container--technology > .technology-info {
+    grid-area: info;
+    
+}
+
+.technology-details p {
+    max-width: initial;
+    padding-inline: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.technology-details h2 {
+    margin-bottom: .5rem;
 }
 
 .number-indicators {
     justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 @media (min-width: 35em) {
@@ -677,6 +690,20 @@ body {
 
     .grid-container--crew > img {
         align-self: end;
+    }
+
+    .number-indicators > button {
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+
+    .number-indicators {
+        margin-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .technology-details p {
+        padding-inline: 8rem;
     }
 }
 
@@ -710,7 +737,8 @@ body {
     }
 
     .grid-container--destination > img,
-    .grid-container--crew > img {
+    .grid-container--crew > img,
+    .grid-container--technology > img {
         max-width: 90%;
     }
 
@@ -736,7 +764,61 @@ body {
         '. dots image .';
     }
 
+    .grid-container--crew > .numbered-title {
+        padding-top: 2rem;
+    }
+
     .grid-container--crew > .dot-indicators {
         justify-self: start;
+    }
+
+    .grid-container--crew > img {
+        grid-column: span 2;
+        align-self: end;
+    }
+
+    .technology > .grid-container {
+        text-align: left;
+        column-gap: var(--container-gap, 1rem);
+        grid-template-columns: minmax(6rem, 1fr) minmax(5rem, 1fr) repeat(2, minmax(0, 40rem));
+    }
+
+    .grid-container--technology {
+        grid-template-areas: 
+        '. title title .'
+        ' . number-ind info image'
+        ' . number-ind info image';
+        justify-items: start;
+        align-content: start;
+        padding-inline: 1rem;
+    }
+
+    .grid-container--technology > img {
+        justify-self: end;
+    }
+
+    .grid-container--technology > .numbered-title {
+        margin-bottom: 5rem;
+        
+    }
+
+    .grid-container--technology > .technology-info {
+        justify-self: start;
+    }
+
+    .number-indicators {
+        flex-direction: column;
+        justify-self: start;
+        padding-inline: 0 !important;
+        width: 100px;
+    }
+
+    .number-indicators > button {
+        height: 5rem;
+        width: 5rem;
+    }
+    
+    .technology-details p {
+        padding-inline: 1.5rem;
     }
 }
